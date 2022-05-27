@@ -29,17 +29,16 @@
 // |  TAB         |  Q   |  W   |  E   |  R   |  T     |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // |  L_CTRL(ESC) |  A   |  S   |  D   |  F   |  G     |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT        |  Z   |  X   |  C   |  V   |  B     | MUTE  |  PP       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                       | CTRL | GUI  | ALT  | SPAVE  | LOWER | ENTER     | BSPC | RAISE | ALT   | GUI  |
+//                       | CTRL | GUI  | ALT  | SPACE  | LOWER | ENTER     | BSPC | RAISE | ALT   | GUI  |
             bindings = <
 &kp GRAVE     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS   
 &kp TAB       &kp Q     &kp W     &kp E     &kp R     &kp T                       &kp Y    &kp U     &kp I     &kp O    &kp P    &kp BSLH
 &ht LCTRL ESC &kp A     &kp S     &kp D     &kp F     &kp G                       &kp H    &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT     &kp Z     &kp X     &kp C     &kp V     &kp B     &kp C_MUTE &kp K_PP  &kp N    &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                        &kp LCTRL &kp LGUI  &kp LALT  &mo 1     &kp SPACE  &kp RET   &kp BSPC &mo 2     &kp RALT  &kp RGUI
+&kp LSHFT     &kp Z     &kp X     &kp C     &kp V     &kp B     &kp C_MUTE &kp C_PP  &kp N    &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LGUI  &kp LALT  &kp SPACE &mo 1   &kp RET   &kp BSPC &mo 2     &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
 
         lower_layer {
@@ -54,11 +53,11 @@
 &trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
 &trans    &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp F12
 &trans    &trans    &kp LBRC  &kp LBKT    &kp LPAR  &kp MINUS                 &kp UNDER &kp RPAR &kp RBKT        &kp RBRC  &kp UNDER &kp PLUS
-&trans    &trans    &trans    &trans      &trans    &trans                    &trans    &trans   &trans          &trans    &kp MINUS &kp EQUAL
+&trans    &trans    &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans    &kp MINUS &kp EQUAL
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
 
         raise_layer {
@@ -76,7 +75,7 @@
                         &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans    &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
     };
 };
