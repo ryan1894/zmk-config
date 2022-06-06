@@ -31,7 +31,7 @@
 // |  TAB         |  Q   |  W   |  E   |  R   |  T     |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // |  L_CTRL(ESC) |  A   |  S   |  D   |  F   |  G     |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT        |  Z   |  X   |  C   |  V   |  B     | MUTE  |  PP       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                       | CTRL | GUI  | ALT  | SPACE  | LOWER | ENTER     | BSPC | LOWER | UPPER | GUI  |
+//                       | CTRL | GUI  | ALT  | SPACE  | DELETE| ENTER     | BSPC | LOWER | UPPER | GUI  |
             bindings = <
 &kp GRAVE     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS   
 &kp TAB       &kp Q     &kp W     &kp E     &kp R     &kp T                       &kp Y    &kp U     &kp I     &kp O    &kp P    &kp BSLH
@@ -64,17 +64,17 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                  |      |      | PRSC  | INS  | HOME  | PG_UP   |
-// |BLE  |      |      |       |       |      |                  |      |      |       | DEL  | END   | PG_DOWN |
-// |USB  |      |      | SHIFT |       |      |                  |  <-  |   ^  |   v   |  ->  |       | DEL     |
+// |BLE  | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                  | BTCLR|      | PRSC  | INS  | HOME  | PG_UP   |
+// |USB  |      |      |       |       |      |                  |      |      |       | DEL  | END   | PG_DOWN |
+// |     |      |      | SHIFT |       |      |                  |  <-  |   ^  |   v   |  ->  |       | DEL     |
 // |     | UNDO | CUT  | COPY  | PASTE |      | RESET |  | RESET |      |      |       |      |       |         |
 //              |      |       |       |      |       |  |       |      |      |       |      |
             bindings = <
-&bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &kp PRSC &kp INS    &kp HOME  &kp PG_UP
-&out OUT_BLE &trans       &trans       &trans       &trans       &trans                   &trans    &trans    &trans   &kp DEL    &kp END   &kp PG_DN
-&out OUT_USB &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &trans                   &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans    &kp DEL
-&trans       &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &reset   &reset  &trans    &trans    &trans   &trans     &trans    &trans
-                        &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans    &trans   &trans
+&out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &bt BT_CLR &trans    &kp PRSC &kp INS    &kp HOME  &kp PG_UP
+&out OUT_USB &trans       &trans       &trans       &trans       &trans                   &trans     &trans    &trans   &kp DEL    &kp END   &kp PG_DN
+&trans       &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &trans                   &kp LEFT   &kp DOWN  &kp UP   &kp RIGHT  &trans    &kp DEL
+&trans       &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &reset   &reset  &trans     &trans    &trans   &trans     &trans    &trans
+                        &trans       &trans       &trans       &trans  &trans   &trans  &trans       &trans    &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
